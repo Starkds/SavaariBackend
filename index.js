@@ -1,8 +1,13 @@
 const express = require('express');
+const placeRoute = require('./Routes/place.route.js')
+const PORT = 3000;
 
 const app = express();
 
 
-app.listen(3000,() =>{
-    console.log("app listened at 3000 port")
+
+app.use('/places',placeRoute);
+
+app.listen(PORT,() =>{
+    console.log(`app listened at ${PORT}`)
 })
